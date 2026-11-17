@@ -1,972 +1,454 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  
-  
-  
-  
-  
-  
-  <rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%2315365c%22/><text x=%2250%22 y=%2268%22 font-size=%2256%22 text-anchor=%22middle%22>❄️</text>" />
-  <rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%2315365c%22/><text x=%2250%22 y=%2268%22 font-size=%2256%22 text-anchor=%22middle%22>❄️</text>" />
-
   <title>SAPPORO FAMILY TRIP 2027</title>
-
-  
-    :root {
-      --navy: #15365c;
-      --deep-navy: #0d2746;
-      --blue: #3979b8;
-      --sky: #dceffc;
-      --ice: #f5f9fc;
-      --white: #ffffff;
-      --text: #172435;
-      --subtext: #647184;
-      --border: #dce5ee;
-      --red: #c84d4d;
-      --gold: #c69242;
-      --green: #31876a;
-      --shadow: 0 10px 30px rgba(19, 48, 78, 0.09);
-      --radius: 20px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      margin: 0;
-      background:
-        radial-gradient(circle at top right, rgba(151, 205, 241, 0.3), transparent 28%),
-        linear-gradient(180deg, #eef7fd 0, #f8fbfd 360px, #f4f7fa 100%);
-      color: var(--text);
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Pretendard",
-        "Noto Sans KR",
-        "Segoe UI",
-        sans-serif;
-      line-height: 1.55;
-    }
-
-    button,
-    input,
-    textarea {
-      font: inherit;
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .app-shell {
-      width: min(100%, 760px);
-      min-height: 100vh;
-      margin: 0 auto;
-      background: rgba(255, 255, 255, 0.72);
-      box-shadow: 0 0 50px rgba(22, 53, 87, 0.08);
-    }
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding:
-        calc(28px + env(safe-area-inset-top))
-        22px
-        28px;
-      color: var(--white);
-      background:
-        linear-gradient(135deg, rgba(13, 39, 70, 0.97), rgba(34, 95, 151, 0.9)),
-        linear-gradient(180deg, #15365c, #3979b8);
-    }
-
-    .hero::before,
-    .hero::after {
-      position: absolute;
-      content: "";
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.08);
-    }
-
-    .hero::before {
-      top: -70px;
-      right: -30px;
-      width: 210px;
-      height: 210px;
-    }
-
-    .hero::after {
-      right: 70px;
-      bottom: -95px;
-      width: 180px;
-      height: 180px;
-    }
-
-    .eyebrow {
-      position: relative;
-      z-index: 1;
-      margin: 0 0 8px;
-      color: #bddcf4;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-    }
-
-    .hero h1 {
-      position: relative;
-      z-index: 1;
-      margin: 0;
-      font-size: clamp(28px, 7vw, 42px);
-      line-height: 1.08;
-      letter-spacing: -0.04em;
-    }
-
-    .hero-subtitle {
-      position: relative;
-      z-index: 1;
-      margin: 12px 0 0;
-      color: #d9eafb;
-      font-size: 14px;
-    }
-
-    .hero-meta {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 20px;
-    }
-
-    .hero-chip {
-      padding: 8px 11px;
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.1);
-      color: #f2f8fd;
-      font-size: 12px;
-      font-weight: 700;
-      backdrop-filter: blur(8px);
-    }
-
-    .countdown-card {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin: 20px 16px 0;
-      padding: 17px 18px;
-      border: 1px solid rgba(255, 255, 255, 0.75);
-      border-radius: 18px;
-      background: rgba(255, 255, 255, 0.94);
-      box-shadow: var(--shadow);
-    }
-
-    .countdown-label {
-      margin-bottom: 3px;
-      color: var(--subtext);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .countdown-value {
-      color: var(--deep-navy);
-      font-size: 23px;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-    }
-
-    .countdown-detail {
-      max-width: 220px;
-      color: var(--subtext);
-      font-size: 12px;
-      text-align: right;
-    }
-
-    .section {
-      padding: 22px 16px 0;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 12px;
-    }
-
-    .section-kicker {
-      display: block;
-      margin-bottom: 3px;
-      color: var(--blue);
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 0.12em;
-    }
-
-    .section h2 {
-      margin: 0;
-      color: var(--deep-navy);
-      font-size: 20px;
-      letter-spacing: -0.035em;
-    }
-
-    .day-tabs {
-      display: grid;
-      grid-template-columns: repeat(5, minmax(64px, 1fr));
-      gap: 8px;
-      overflow-x: auto;
-      padding: 4px 16px 12px;
-      scrollbar-width: none;
-    }
-
-    .day-tabs::-webkit-scrollbar {
-      display: none;
-    }
-
-    .day-tab {
-      min-width: 66px;
-      padding: 11px 6px;
-      border: 1px solid var(--border);
-      border-radius: 15px;
-      background: var(--white);
-      color: var(--subtext);
-      cursor: pointer;
-      transition: 0.2s ease;
-      text-align: center;
-    }
-
-    .day-tab strong {
-      display: block;
-      color: inherit;
-      font-size: 13px;
-    }
-
-    .day-tab span {
-      display: block;
-      margin-top: 2px;
-      font-size: 11px;
-    }
-
-    .day-tab.active {
-      border-color: var(--navy);
-      background: var(--navy);
-      color: var(--white);
-      box-shadow: 0 8px 20px rgba(21, 54, 92, 0.2);
-      transform: translateY(-1px);
-    }
-
-    .day-summary {
-      margin: 0 16px;
-      padding: 19px;
-      border: 1px solid #d8e6f1;
-      border-radius: var(--radius);
-      background:
-        linear-gradient(135deg, rgba(220, 239, 252, 0.9), rgba(255, 255, 255, 0.98));
-      box-shadow: 0 8px 24px rgba(33, 72, 108, 0.07);
-    }
-
-    .day-summary-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-    }
-
-    .day-summary h3 {
-      margin: 0;
-      color: var(--deep-navy);
-      font-size: 19px;
-      letter-spacing: -0.035em;
-    }
-
-    .day-summary p {
-      margin: 7px 0 0;
-      color: var(--subtext);
-      font-size: 13px;
-    }
-
-    .weather-note {
-      flex: 0 0 auto;
-      padding: 7px 10px;
-      border-radius: 999px;
-      background: var(--white);
-      color: var(--blue);
-      font-size: 11px;
-      font-weight: 800;
-    }
-
-    .progress-row {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-top: 17px;
-    }
-
-    .progress-track {
-      flex: 1;
-      height: 8px;
-      overflow: hidden;
-      border-radius: 999px;
-      background: rgba(21, 54, 92, 0.1);
-    }
-
-    .progress-bar {
-      width: 0;
-      height: 100%;
-      border-radius: inherit;
-      background: linear-gradient(90deg, var(--blue), var(--green));
-      transition: width 0.3s ease;
-    }
-
-    .progress-text {
-      min-width: 72px;
-      color: var(--navy);
-      font-size: 12px;
-      font-weight: 900;
-      text-align: right;
-    }
-
-    .filters {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding-bottom: 4px;
-      scrollbar-width: none;
-    }
-
-    .filters::-webkit-scrollbar {
-      display: none;
-    }
-
-    .filter-button {
-      flex: 0 0 auto;
-      padding: 8px 13px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      background: var(--white);
-      color: var(--subtext);
-      font-size: 12px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .filter-button.active {
-      border-color: var(--navy);
-      background: var(--navy);
-      color: var(--white);
-    }
-
-    .timeline {
-      position: relative;
-      margin-top: 16px;
-    }
-
-    .timeline::before {
-      position: absolute;
-      top: 10px;
-      bottom: 12px;
-      left: 18px;
-      width: 2px;
-      content: "";
-      background: linear-gradient(var(--sky), var(--border));
-    }
-
-    .schedule-card {
-      position: relative;
-      display: grid;
-      grid-template-columns: 37px 1fr;
-      gap: 12px;
-      margin-bottom: 13px;
-    }
-
-    .timeline-dot {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      width: 37px;
-      height: 37px;
-      place-items: center;
-      border: 5px solid #f7fafc;
-      border-radius: 50%;
-      background: var(--navy);
-      color: var(--white);
-      font-size: 9px;
-      font-weight: 900;
-      box-shadow: 0 2px 10px rgba(21, 54, 92, 0.16);
-    }
-
-    .schedule-content {
-      padding: 16px;
-      border: 1px solid var(--border);
-      border-radius: 17px;
-      background: var(--white);
-      box-shadow: 0 7px 22px rgba(19, 48, 78, 0.06);
-      transition: 0.2s ease;
-    }
-
-    .schedule-card.completed .schedule-content {
-      opacity: 0.68;
-      background: #f4f8f6;
-    }
-
-    .schedule-card.completed .schedule-title {
-      text-decoration: line-through;
-      text-decoration-color: #8b9a94;
-    }
-
-    .schedule-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .schedule-time {
-      color: var(--blue);
-      font-size: 11px;
-      font-weight: 900;
-      letter-spacing: 0.02em;
-    }
-
-    .schedule-title {
-      margin: 4px 0 0;
-      color: var(--deep-navy);
-      font-size: 16px;
-      letter-spacing: -0.025em;
-    }
-
-    .check-label {
-      display: grid;
-      flex: 0 0 auto;
-      width: 28px;
-      height: 28px;
-      place-items: center;
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      background: var(--ice);
-      cursor: pointer;
-    }
-
-    .check-label input {
-      width: 17px;
-      height: 17px;
-      accent-color: var(--green);
-      cursor: pointer;
-    }
-
-    .tag-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 11px;
-    }
-
-    .tag {
-      padding: 4px 8px;
-      border-radius: 999px;
-      background: #edf4fa;
-      color: var(--navy);
-      font-size: 10px;
-      font-weight: 800;
-    }
-
-    .tag.meal {
-      background: #fff2e2;
-      color: #9a6019;
-    }
-
-    .tag.important {
-      background: #fdecec;
-      color: #ae3f3f;
-    }
-
-    .schedule-description {
-      margin: 11px 0 0;
-      color: #4e5d6e;
-      font-size: 13px;
-    }
-
-    .info-list {
-      display: grid;
-      gap: 8px;
-      margin-top: 13px;
-    }
-
-    .info-row {
-      display: grid;
-      grid-template-columns: 74px 1fr;
-      gap: 8px;
-      font-size: 12px;
-    }
-
-    .info-label {
-      color: var(--subtext);
-      font-weight: 800;
-    }
-
-    .info-value {
-      color: #37465a;
-    }
-
-    .card-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 14px;
-    }
-
-    .action-link {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 8px 11px;
-      border: 1px solid #cddcea;
-      border-radius: 10px;
-      color: var(--navy);
-      background: #f7fbfe;
-      font-size: 11px;
-      font-weight: 900;
-      text-decoration: none;
-    }
-
-    .must-eat-card,
-    .memo-card,
-    .checklist-card,
-    .flight-card,
-    .hotel-card {
-      padding: 18px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--white);
-      box-shadow: 0 7px 22px rgba(19, 48, 78, 0.06);
-    }
-
-    .hotel-badge {
-      display: inline-block;
-      padding: 4px 9px;
-      border-radius: 999px;
-      background: #eaf4fc;
-      color: var(--navy);
-      font-size: 11px;
-      font-weight: 800;
-    }
-
-    .hotel-name {
-      margin: 8px 0 4px;
-      color: var(--deep-navy);
-      font-size: 18px;
-      font-weight: 900;
-      letter-spacing: -0.03em;
-    }
-
-    .hotel-sub {
-      margin: 0 0 12px;
-      color: var(--subtext);
-      font-size: 12px;
-    }
-
-    .food-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 9px;
-      margin-top: 13px;
-    }
-
-    .food-item {
-      padding: 12px;
-      border: 1px solid #ebe3d5;
-      border-radius: 14px;
-      background: #fffaf2;
-    }
-
-    .food-item strong {
-      display: block;
-      color: #714919;
-      font-size: 13px;
-    }
-
-    .food-item span {
-      display: block;
-      margin-top: 3px;
-      color: #957149;
-      font-size: 10px;
-    }
-
-    .memo-card textarea {
-      width: 100%;
-      min-height: 110px;
-      margin-top: 12px;
-      padding: 13px;
-      resize: vertical;
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      outline: none;
-      background: #f9fbfd;
-      color: var(--text);
-    }
-
-    .memo-card textarea:focus {
-      border-color: var(--blue);
-      box-shadow: 0 0 0 3px rgba(57, 121, 184, 0.1);
-    }
-
-    .save-note {
-      margin: 8px 0 0;
-      color: var(--green);
-      font-size: 11px;
-      font-weight: 800;
-      text-align: right;
-      opacity: 0;
-      transition: opacity 0.2s ease;
-    }
-
-    .save-note.visible {
-      opacity: 1;
-    }
-
-    .checklist-group-title {
-      margin: 14px 0 6px;
-      color: var(--navy);
-      font-size: 12px;
-      font-weight: 900;
-    }
-
-    .checklist {
-      display: grid;
-      gap: 8px;
-      margin-top: 8px;
-    }
-
-    .checklist-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      padding: 11px;
-      border-radius: 13px;
-      background: var(--ice);
-      color: #405064;
-      font-size: 13px;
-      cursor: pointer;
-    }
-
-    .checklist-item input {
-      flex: 0 0 auto;
-      width: 18px;
-      height: 18px;
-      margin-top: 1px;
-      accent-color: var(--green);
-    }
-
-    .checklist-item.checked span {
-      color: #8c9893;
-      text-decoration: line-through;
-    }
-
-    .flight-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 13px;
-    }
-
-    .flight-box {
-      padding: 14px;
-      border-radius: 15px;
-      background: #f1f7fb;
-    }
-
-    .flight-box small {
-      display: block;
-      color: var(--subtext);
-      font-size: 10px;
-      font-weight: 800;
-    }
-
-    .flight-box strong {
-      display: block;
-      margin-top: 5px;
-      color: var(--deep-navy);
-      font-size: 19px;
-    }
-
-    .flight-box span {
-      display: block;
-      margin-top: 3px;
-      color: var(--subtext);
-      font-size: 11px;
-    }
-
-    .notice-box {
-      margin-top: 12px;
-      padding: 12px;
-      border-radius: 13px;
-      background: #fff4e8;
-      color: #865a25;
-      font-size: 11px;
-    }
-
-    .empty-state {
-      padding: 40px 18px;
-      border: 1px dashed var(--border);
-      border-radius: 17px;
-      color: var(--subtext);
-      background: var(--white);
-      text-align: center;
-      font-size: 13px;
-    }
-
-    .footer {
-      margin-top: 30px;
-      padding:
-        26px
-        20px
-        calc(30px + env(safe-area-inset-bottom));
-      color: #97a8ba;
-      background: var(--deep-navy);
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .footer strong {
-      display: block;
-      margin-bottom: 5px;
-      color: #dceafb;
-      font-size: 13px;
-    }
-
-    @media (min-width: 680px) {
-      .section {
-        padding-right: 24px;
-        padding-left: 24px;
-      }
-
-      .day-tabs {
-        padding-right: 24px;
-        padding-left: 24px;
-      }
-
-      .day-summary {
-        margin-right: 24px;
-        margin-left: 24px;
-      }
-
-      .food-grid {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-  
 </head>
+<body style="margin:0; padding:0; background:#eef5fb; color:#172435; font-family:-apple-system,BlinkMacSystemFont,'Pretendard','Noto Sans KR','Segoe UI',sans-serif; line-height:1.55;">
 
-<body>
-  <div class="app-shell">
-    <header class="hero">
-      <p class="eyebrow">SAPPORO / BIEI / OTARU</p>
+  <div style="max-width:720px; margin:0 auto; background:#f8fbfd; min-height:100vh; box-shadow:0 0 40px rgba(13,39,70,0.08);">
 
-      <h1>SAPPORO<br />FAMILY TRIP 2027</h1>
-
-      <p class="hero-subtitle">
-        아빠 · 엄마 · 성인 아들 1 · 성인 아들 2의 4박 5일
+    <!-- 상단 히어로 배너 -->
+    <header style="padding:32px 22px 26px; background:linear-gradient(135deg,#0d2746 0%,#15365c 55%,#3979b8 100%); color:#ffffff;">
+      <p style="margin:0 0 8px; color:#bddcf4; font-size:12px; font-weight:800; letter-spacing:0.16em;">SAPPORO / BIEI / OTARU</p>
+      <h1 style="margin:0; font-size:32px; line-height:1.12; letter-spacing:-0.03em;">2027.01.07 — 01.11<br>삿포로 가족여행 일정표</h1>
+      <p style="margin:12px 0 0; color:#d9eafb; font-size:14px; font-weight:600;">
+        4박 5일 · 성인 4인 (아빠 · 엄마 · 성인 아들 1 · 성인 아들 2)
       </p>
-
-      <div class="hero-meta">
-        <span class="hero-chip">2027. 01. 07. — 01. 11.</span>
-        <span class="hero-chip">솔라리아 니시테츠 호텔 삿포로 (4박)</span>
-        <span class="hero-chip">대한항공 10:05 / 14:15</span>
-        <span class="hero-chip">성인 4인</span>
+      <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:18px;">
+        <span style="padding:6px 12px; border:1px solid rgba(255,255,255,0.22); border-radius:999px; background:rgba(255,255,255,0.12); color:#f2f8fd; font-size:12px; font-weight:700;">솔라리아 니시테츠 호텔 삿포로 (4박 예정)</span>
+        <span style="padding:6px 12px; border:1px solid rgba(255,255,255,0.22); border-radius:999px; background:rgba(255,255,255,0.12); color:#f2f8fd; font-size:12px; font-weight:700;">대한항공 1/7 10:05 · 1/11 14:15</span>
+        <span style="padding:6px 12px; border:1px solid rgba(255,255,255,0.22); border-radius:999px; background:rgba(255,255,255,0.12); color:#f2f8fd; font-size:12px; font-weight:700;">한국과 시차 없음</span>
       </div>
     </header>
 
-    <section class="countdown-card">
-      <div>
-        <div class="countdown-label">여행 카운트다운</div>
-        <div id="countdownValue" class="countdown-value">계산 중</div>
-      </div>
+    <!-- 빠른 일차 이동 탭 -->
+    <nav style="position:sticky; top:0; z-index:10; display:grid; grid-template-columns:repeat(5,1fr); gap:6px; padding:12px 16px; background:rgba(248,251,253,0.95); border-bottom:1px solid #dce5ee;">
+      <a href="#day1" style="padding:9px 4px; border:1px solid #15365c; border-radius:12px; background:#15365c; color:#ffffff; text-decoration:none; text-align:center; font-size:12px; font-weight:800;">1일차<br><span style="font-size:10px; font-weight:500; opacity:0.85;">01.07(목)</span></a>
+      <a href="#day2" style="padding:9px 4px; border:1px solid #dce5ee; border-radius:12px; background:#ffffff; color:#15365c; text-decoration:none; text-align:center; font-size:12px; font-weight:800;">2일차<br><span style="font-size:10px; font-weight:500; color:#647184;">01.08(금)</span></a>
+      <a href="#day3" style="padding:9px 4px; border:1px solid #dce5ee; border-radius:12px; background:#ffffff; color:#15365c; text-decoration:none; text-align:center; font-size:12px; font-weight:800;">3일차<br><span style="font-size:10px; font-weight:500; color:#647184;">01.09(토)</span></a>
+      <a href="#day4" style="padding:9px 4px; border:1px solid #dce5ee; border-radius:12px; background:#ffffff; color:#15365c; text-decoration:none; text-align:center; font-size:12px; font-weight:800;">4일차<br><span style="font-size:10px; font-weight:500; color:#647184;">01.10(일)</span></a>
+      <a href="#day5" style="padding:9px 4px; border:1px solid #dce5ee; border-radius:12px; background:#ffffff; color:#15365c; text-decoration:none; text-align:center; font-size:12px; font-weight:800;">5일차<br><span style="font-size:10px; font-weight:500; color:#647184;">01.11(월)</span></a>
+    </nav>
 
-      <div id="countdownDetail" class="countdown-detail">
-        삿포로 여행일까지 남은 날짜를 계산하고 있습니다.
-      </div>
-    </section>
+    <div style="padding:18px 16px 32px; display:grid; gap:20px;">
 
-    <section class="section">
-      <div class="section-header">
-        <div>
-          <span class="section-kicker">SELECT DAY</span>
-          <h2>일차별 일정</h2>
-        </div>
-      </div>
-    </section>
+      <!-- 핵심 항공 & 숙소 요약 카드 -->
+      <section style="padding:18px; border:1px solid #dce5ee; border-radius:18px; background:#ffffff; box-shadow:0 6px 20px rgba(19,48,78,0.06);">
+        <span style="display:block; color:#3979b8; font-size:11px; font-weight:900; letter-spacing:0.1em;">FLIGHT & HOTEL SUMMARY</span>
+        <h2 style="margin:3px 0 12px; color:#0d2746; font-size:18px;">항공 및 숙소 기본 정보</h2>
 
-    <nav id="dayTabs" class="day-tabs" aria-label="일차 선택"></nav>
-
-    <section id="daySummary" class="day-summary"></section>
-
-    <section class="section">
-      <div class="section-header">
-        <div>
-          <span class="section-kicker">DAILY ROUTE</span>
-          <h2>상세 일정</h2>
-        </div>
-      </div>
-
-      <div id="filters" class="filters"></div>
-
-      <div id="timeline" class="timeline"></div>
-    </section>
-
-    <section class="section">
-      <div class="must-eat-card">
-        <div class="section-header">
-          <div>
-            <span class="section-kicker">MUST EAT 6</span>
-            <h2>필수 미식 6종</h2>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:12px;">
+          <div style="padding:12px; border-radius:14px; background:#f1f7fb;">
+            <small style="display:block; color:#647184; font-size:11px; font-weight:800;">가는 편 · 01.07 (목)</small>
+            <strong style="display:block; margin-top:4px; color:#0d2746; font-size:17px;">10:05 인천 출발</strong>
+            <span style="display:block; margin-top:2px; color:#647184; font-size:11px;">대한항공 · 12:30 전후 신치토세 도착 예상</span>
+          </div>
+          <div style="padding:12px; border-radius:14px; background:#f1f7fb;">
+            <small style="display:block; color:#647184; font-size:11px; font-weight:800;">오는 편 · 01.11 (월)</small>
+            <strong style="display:block; margin-top:4px; color:#0d2746; font-size:17px;">14:15 신치토세 출발</strong>
+            <span style="display:block; margin-top:2px; color:#647184; font-size:11px;">대한항공 · 11:00 전후 공항 도착 목표</span>
           </div>
         </div>
 
-        <div class="food-grid">
-          <div class="food-item">
-            <strong>스프카레</strong>
-            <span>1일차 저녁 · 스프카레 GARAKU</span>
-          </div>
-
-          <div class="food-item">
-            <strong>해산물덮밥</strong>
-            <span>3일차 아침 · 돈부리차야 니조시장점</span>
-          </div>
-
-          <div class="food-item">
-            <strong>우유 아이스크림</strong>
-            <span>3일차 간식 · 키노토야 BAKE 폴타운점</span>
-          </div>
-
-          <div class="food-item">
-            <strong>스시</strong>
-            <span>3일차 저녁 · 네무로 하나마루 스텔라플레이스점</span>
-          </div>
-
-          <div class="food-item">
-            <strong>징기스칸</strong>
-            <span>4일차 저녁 · 삿포로 비어가든</span>
-          </div>
-
-          <div class="food-item">
-            <strong>삿포로 맥주</strong>
-            <span>4일차 · 맥주박물관 & 삿포로 비어가든</span>
-          </div>
+        <div style="padding:13px; border-radius:14px; background:#f5f9fc; border:1px solid #e1ecf4; font-size:13px;">
+          <strong style="color:#0d2746; font-size:14px;">🏨 숙소: 솔라리아 니시테츠 호텔 삿포로 (4박 연박 예정)</strong>
+          <p style="margin:6px 0 10px; color:#4e5d6e; font-size:12px;">
+            • 공항 → 삿포로역: JR 약 40분 / 역 남쪽 출구 → 호텔 도보 이동<br>
+            • 날짜·시간은 현지 기준(한국과 시차 없음) / 도착 시각은 항공권으로 최종 확인
+          </p>
+          <a href="https://www.google.com/maps/search/?api=1&query=Solaria+Nishitetsu+Hotel+Sapporo" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:7px 12px; border:1px solid #cddcea; border-radius:9px; background:#ffffff; color:#15365c; font-size:11px; font-weight:800; text-decoration:none;">📍 호텔 구글 지도 열기</a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="section">
-      <div class="memo-card">
-        <div class="section-header">
-          <div>
-            <span class="section-kicker">FAMILY MEMO</span>
-            <h2 id="memoTitle">1일차 가족 메모</h2>
-          </div>
+      <!-- 필수 미식 6종 -->
+      <section style="padding:18px; border:1px solid #dce5ee; border-radius:18px; background:#ffffff; box-shadow:0 6px 20px rgba(19,48,78,0.06);">
+        <span style="display:block; color:#c69242; font-size:11px; font-weight:900; letter-spacing:0.1em;">MUST EAT 6</span>
+        <h2 style="margin:3px 0 12px; color:#0d2746; font-size:18px;">필수 미식 6종 체크</h2>
+        <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:8px;">
+          <label style="display:flex; align-items:flex-start; gap:8px; padding:11px; border:1px solid #ebe3d5; border-radius:13px; background:#fffaf2; cursor:pointer;">
+            <input type="checkbox" style="margin-top:3px; width:16px; height:16px; accent-color:#31876a;">
+            <span><strong style="display:block; color:#714919; font-size:13px;">1. 스프카레</strong><small style="color:#957149; font-size:11px;">1일차 저녁 · 스프카레 GARAKU</small></span>
+          </label>
+          <label style="display:flex; align-items:flex-start; gap:8px; padding:11px; border:1px solid #ebe3d5; border-radius:13px; background:#fffaf2; cursor:pointer;">
+            <input type="checkbox" style="margin-top:3px; width:16px; height:16px; accent-color:#31876a;">
+            <span><strong style="display:block; color:#714919; font-size:13px;">2. 해산물덮밥</strong><small style="color:#957149; font-size:11px;">3일차 아침 · 돈부리차야 니조시장점</small></span>
+          </label>
+          <label style="display:flex; align-items:flex-start; gap:8px; padding:11px; border:1px solid #ebe3d5; border-radius:13px; background:#fffaf2; cursor:pointer;">
+            <input type="checkbox" style="margin-top:3px; width:16px; height:16px; accent-color:#31876a;">
+            <span><strong style="display:block; color:#714919; font-size:13px;">3. 우유 아이스크림</strong><small style="color:#957149; font-size:11px;">3일차 간식 · 키노토야 BAKE 폴타운점</small></span>
+          </label>
+          <label style="display:flex; align-items:flex-start; gap:8px; padding:11px; border:1px solid #ebe3d5; border-radius:13px; background:#fffaf2; cursor:pointer;">
+            <input type="checkbox" style="margin-top:3px; width:16px; height:16px; accent-color:#31876a;">
+            <span><strong style="display:block; color:#714919; font-size:13px;">4. 스시</strong><small style="color:#957149; font-size:11px;">3일차 저녁 · 네무로 하나마루</small></span>
+          </label>
+          <label style="display:flex; align-items:flex-start; gap:8px; padding:11px; border:1px solid #ebe3d5; border-radius:13px; background:#fffaf2; cursor:pointer;">
+            <input type="checkbox" style="margin-top:3px; width:16px; height:16px; accent-color:#31876a;">
+            <span><strong style="display:block; color:#714919; font-size:13px;">5. 징기스칸</strong><small style="color:#957149; font-size:11px;">4일차 저녁 · 삿포로 비어가든</small></span>
+          </label>
+          <label style="display:flex; align-items:flex-start; gap:8px; padding:11px; border:1px solid #ebe3d5; border-radius:13px; background:#fffaf2; cursor:pointer;">
+            <input type="checkbox" style="margin-top:3px; width:16px; height:16px; accent-color:#31876a;">
+            <span><strong style="display:block; color:#714919; font-size:13px;">6. 삿포로 맥주</strong><small style="color:#957149; font-size:11px;">4일차 · 맥주박물관 & 비어가든</small></span>
+          </label>
         </div>
+      </section>
 
-        <textarea
-          id="dayMemo"
-          placeholder="예약번호, 대기 접수 번호, 대체 식당, 쇼핑 메모 등을 적어 두세요."
-        ></textarea>
-
-        <p id="saveNote" class="save-note">이 기기에 자동 저장되었습니다.</p>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="hotel-card">
-        <div class="section-header">
-          <div>
-            <span class="section-kicker">HOTEL (4 NIGHTS)</span>
-            <h2>숙소 및 이동 기준점</h2>
+      <!-- ==================== 1일차 ==================== -->
+      <section id="day1" style="scroll-margin-top:70px; border:1px solid #d8e6f1; border-radius:20px; background:#ffffff; overflow:hidden; box-shadow:0 8px 24px rgba(19,48,78,0.07);">
+        <div style="padding:18px; background:linear-gradient(135deg,#dceffc 0%,#f5f9fc 100%); border-bottom:1px solid #d8e6f1;">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+            <span style="padding:4px 10px; border-radius:999px; background:#15365c; color:#ffffff; font-size:11px; font-weight:800;">1일차 · 01.07 (목)</span>
+            <span style="padding:4px 10px; border-radius:999px; background:#ffffff; color:#3979b8; font-size:11px; font-weight:800;">솔라리아 니시테츠 1/4박</span>
           </div>
+          <h3 style="margin:10px 0 4px; color:#0d2746; font-size:19px;">입국 · 삿포로역 · 오도리</h3>
+          <p style="margin:0; color:#4e5d6e; font-size:12px;">공항 → 삿포로역(JR 약 40분) · 역 남쪽 출구 → 호텔 도보 · 귀로는 지하 보행공간 활용</p>
         </div>
 
-        <span class="hotel-badge">4박 연박 예정 · JR 삿포로역 남쪽 출구 도보 이동</span>
-        <div class="hotel-name">솔라리아 니시테츠 호텔 삿포로</div>
-        <p class="hotel-sub">ソラリア西鉄ホテル札幌 · Solaria Nishitetsu Hotel Sapporo</p>
+        <div style="padding:16px; display:grid; gap:12px;">
+          <!-- 일정 항목들 -->
+          <label style="display:flex; gap:10px; padding:13px; border:1px solid #dce5ee; border-radius:14px; background:#fdfefe; cursor:pointer;">
+            <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+            <div style="flex:1;">
+              <div style="color:#3979b8; font-size:11px; font-weight:900;">10:05 인천 출발 → 12:30 전후 도착 예상</div>
+              <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">대한항공 인천 출발 · 신치토세 도착</strong>
+              <p style="margin:6px 0 0; color:#4e5d6e; font-size:12px;">• 점심: 기내식 또는 공항 간편식<br>• 입국 · 수하물 수령 60~90분 예상 (도착 시각은 항공권으로 확인)</p>
+            </div>
+          </label>
 
-        <div class="info-list">
-          <div class="info-row">
-            <div class="info-label">공항 ↔ 호텔</div>
-            <div class="info-value">신치토세공항 ↔ 삿포로역 JR 약 40분 + 역 남쪽 출구에서 호텔 도보</div>
+          <label style="display:flex; gap:10px; padding:13px; border:1px solid #dce5ee; border-radius:14px; background:#fdfefe; cursor:pointer;">
+            <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+            <div style="flex:1;">
+              <div style="color:#3979b8; font-size:11px; font-weight:900;">14:00 전후 이동 → 15:00 전후 체크인</div>
+              <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">JR로 삿포로 이동 · 솔라리아 니시테츠 호텔 체크인 및 휴식</strong>
+              <p style="margin:6px 0 0; color:#4e5d6e; font-size:12px;">• 공항 → 삿포로역: JR 약 40분 소요<br>• 삿포로역 남쪽 출구 → 호텔 도보 이동 (4박 예정 · 1/4박)</p>
+            </div>
+          </label>
+
+          <div style="padding:13px; border:1px solid #f0dfc8; border-radius:14px; background:#fffaf3;">
+            <label style="display:flex; gap:10px; cursor:pointer;">
+              <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+              <div style="flex:1;">
+                <div style="color:#9a6019; font-size:11px; font-weight:900;">17:00 저녁 식사 [필수 미식 ① 스프카레]</div>
+                <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">스프카레 GARAKU (닭다리 · 채소 스프카레)</strong>
+                <p style="margin:6px 0 8px; color:#4e5d6e; font-size:12px;">• 이동: 호텔 → 식당 도보 약 15~20분<br>• 메뉴: 닭다리 · 채소 스프카레 (맵기는 각자 선택)<br>• 알아둘 점: GARAKU 대기 시 대체점 검토</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Soup+Curry+GARAKU+Sapporo" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:6px 10px; border:1px solid #d8c3a5; border-radius:8px; background:#ffffff; color:#714919; font-size:11px; font-weight:800; text-decoration:none;">📍 GARAKU 구글 지도</a>
+              </div>
+            </label>
           </div>
-          <div class="info-row">
-            <div class="info-label">시내 이동</div>
-            <div class="info-value">오도리·스스키노 귀로 및 도심 이동 시 지하 보행공간(지하상가) 적극 활용</div>
+
+          <label style="display:flex; gap:10px; padding:13px; border:1px solid #dce5ee; border-radius:14px; background:#fdfefe; cursor:pointer;">
+            <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+            <div style="flex:1;">
+              <div style="color:#3979b8; font-size:11px; font-weight:900;">18:30 오도리공원 → 19:10 TV타워</div>
+              <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">오도리공원 산책 및 삿포로 TV타워</strong>
+              <p style="margin:6px 0 0; color:#4e5d6e; font-size:12px;">• TV타워 전망대는 컨디션에 따라 선택 / 오도리 산책은 30분 안팎<br>• 호텔 귀로는 추위와 빙판을 피해 지하 보행공간 활용</p>
+            </div>
+          </label>
+        </div>
+      </section>
+
+      <!-- ==================== 2일차 ==================== -->
+      <section id="day2" style="scroll-margin-top:70px; border:1px solid #d8e6f1; border-radius:20px; background:#ffffff; overflow:hidden; box-shadow:0 8px 24px rgba(19,48,78,0.07);">
+        <div style="padding:18px; background:linear-gradient(135deg,#dceffc 0%,#f5f9fc 100%); border-bottom:1px solid #d8e6f1;">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+            <span style="padding:4px 10px; border-radius:999px; background:#15365c; color:#ffffff; font-size:11px; font-weight:800;">2일차 · 01.08 (금)</span>
+            <span style="padding:4px 10px; border-radius:999px; background:#ffffff; color:#3979b8; font-size:11px; font-weight:800;">같은 호텔 연박 · 2/4박</span>
           </div>
-          <div class="info-row">
-            <div class="info-label">체크사항</div>
-            <div class="info-value">호텔 4인 1실 가능 여부 / 2실 비교 · 호텔 조식 시작 시각과 2일차 투어 집결 시각 비교</div>
-          </div>
+          <h3 style="margin:10px 0 4px; color:#0d2746; font-size:19px;">오토리 여행 비에이 일일투어</h3>
+          <p style="margin:0; color:#4e5d6e; font-size:12px;">투어 전용버스 이용 · 비에이 편도 약 2시간 30분 이상 · 미팅 15분 전 도착 권장</p>
         </div>
 
-        <div class="card-actions">
-          <a class="action-link" href="https://www.google.com/maps/search/?api=1&query=Solaria+Nishitetsu+Hotel+Sapporo" target="_blank" rel="noopener noreferrer">
-            📍 호텔 구글 지도 열기
-          </a>
-        </div>
-      </div>
-    </section>
+        <div style="padding:16px; display:grid; gap:12px;">
+          <label style="display:flex; gap:10px; padding:13px; border:1px solid #dce5ee; border-radius:14px; background:#fdfefe; cursor:pointer;">
+            <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+            <div style="flex:1;">
+              <div style="color:#3979b8; font-size:11px; font-weight:900;">06:30 아침 식사 · 07:20 전후 집결지 이동(예시)</div>
+              <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">호텔 조식 또는 준비한 간편식 후 집결지 이동</strong>
+              <p style="margin:6px 0 0; color:#4e5d6e; font-size:12px;">• 호텔 조식 시작 시각과 투어 집결 시각 비교 필요<br>• 집결지는 확정 바우처 기준 / 미팅 15분 전 도착 권장</p>
+            </div>
+          </label>
 
-    <section class="section">
-      <div class="flight-card">
-        <div class="section-header">
-          <div>
-            <span class="section-kicker">FLIGHT</span>
-            <h2>대한항공 일정 (한국과 시차 없음)</h2>
+          <label style="display:flex; gap:10px; padding:13px; border:1px solid #f5d0d0; border-radius:14px; background:#fff9f9; cursor:pointer;">
+            <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+            <div style="flex:1;">
+              <div style="color:#ae3f3f; font-size:11px; font-weight:900;">08:00~19:00 투어 시간대 예상</div>
+              <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">오토리 여행 비에이 일일투어 (전용버스)</strong>
+              <p style="margin:6px 0 0; color:#4e5d6e; font-size:12px;">• 점심: 투어 포함식 / 현지 자유식 (포함 여부 사전 확인)<br>• 코스: 크리스마스트리 나무 · 흰수염폭포 · 청의 호수는 확정 코스에 포함된 경우 방문<br>• 주의: 집결 · 귀착 시각 확인 / 폭설 · 도로 통제로 정차지 변경 가능 / <strong>사유지 출입 금지</strong></p>
+            </div>
+          </label>
+
+          <label style="display:flex; gap:10px; padding:13px; border:1px solid #dce5ee; border-radius:14px; background:#fdfefe; cursor:pointer;">
+            <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+            <div style="flex:1;">
+              <div style="color:#3979b8; font-size:11px; font-weight:900;">19:00~20:00 삿포로 복귀 · 저녁</div>
+              <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">역 주변 라멘 · 우동 등 저녁 식사</strong>
+              <p style="margin:6px 0 0; color:#4e5d6e; font-size:12px;">• 귀착 지연에 대비해 2일차 저녁은 시간 지정 예약을 피하기</p>
+            </div>
+          </label>
+        </div>
+      </section>
+
+      <!-- ==================== 3일차 ==================== -->
+      <section id="day3" style="scroll-margin-top:70px; border:1px solid #d8e6f1; border-radius:20px; background:#ffffff; overflow:hidden; box-shadow:0 8px 24px rgba(19,48,78,0.07);">
+        <div style="padding:18px; background:linear-gradient(135deg,#dceffc 0%,#f5f9fc 100%); border-bottom:1px solid #d8e6f1;">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+            <span style="padding:4px 10px; border-radius:999px; background:#15365c; color:#ffffff; font-size:11px; font-weight:800;">3일차 · 01.09 (토)</span>
+            <span style="padding:4px 10px; border-radius:999px; background:#ffffff; color:#3979b8; font-size:11px; font-weight:800;">같은 호텔 연박 · 3/4박</span>
+          </div>
+          <h3 style="margin:10px 0 4px; color:#0d2746; font-size:19px;">니조시장 · 도심 · 시로이코이비토</h3>
+          <p style="margin:0; color:#4e5d6e; font-size:12px;">토요일이라 식당 대기와 혼잡에 따라 휴식 · 쇼핑 시간을 유연하게 조정</p>
+        </div>
+
+        <div style="padding:16px; display:grid; gap:12px;">
+          <div style="padding:13px; border:1px solid #f0dfc8; border-radius:14px; background:#fffaf3;">
+            <label style="display:flex; gap:10px; cursor:pointer;">
+              <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+              <div style="flex:1;">
+                <div style="color:#9a6019; font-size:11px; font-weight:900;">08:00 니조시장 이동 → 08:15 아침 [필수 미식 ② 해산물덮밥]</div>
+                <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">돈부리차야 니조시장점 (해산물덮밥)</strong>
+                <p style="margin:6px 0 8px; color:#4e5d6e; font-size:12px;">• 이동: 호텔 → 시장 택시 약 10~15분 또는 도보 약 25분<br>• 알아둘 점: 해산물덮밥을 먹는 날이므로 호텔 조식은 생략하거나 소량만</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Donburi+Chaya+Nijo+Market+Sapporo" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:6px 10px; border:1px solid #d8c3a5; border-radius:8px; background:#ffffff; color:#714919; font-size:11px; font-weight:800; text-decoration:none;">📍 돈부리차야 니조시장점 지도</a>
+              </div>
+            </label>
+          </div>
+
+          <label style="display:flex; gap:10px; padding:13px; border:1px solid #dce5ee; border-radius:14px; background:#fdfefe; cursor:pointer;">
+            <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+            <div style="flex:1;">
+              <div style="color:#3979b8; font-size:11px; font-weight:900;">09:30 도심 산책 · 쇼핑</div>
+              <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">다누키코지 상점가</strong>
+              <p style="margin:6px 0 0; color:#4e5d6e; font-size:12px;">• 도심은 도보 · 지하상가(아케이드)를 활용하여 눈길 걱정 없이 이동</p>
+            </div>
+          </label>
+
+          <div style="padding:13px; border:1px solid #f0dfc8; border-radius:14px; background:#fffaf3;">
+            <label style="display:flex; gap:10px; cursor:pointer;">
+              <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+              <div style="flex:1;">
+                <div style="color:#9a6019; font-size:11px; font-weight:900;">11:00 간식 [필수 미식 ③ 우유 아이스크림]</div>
+                <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">키노토야 BAKE 폴타운점 (우유 소프트아이스크림)</strong>
+                <p style="margin:6px 0 8px; color:#4e5d6e; font-size:12px;">• 폴타운 지하상가에서 우유 소프트아이스크림 맛보기</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=KINOTOYA+BAKE+Pole+Town" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:6px 10px; border:1px solid #d8c3a5; border-radius:8px; background:#ffffff; color:#714919; font-size:11px; font-weight:800; text-decoration:none;">📍 키노토야 폴타운점 지도</a>
+              </div>
+            </label>
+          </div>
+
+          <label style="display:flex; gap:10px; padding:13px; border:1px solid #dce5ee; border-radius:14px; background:#fdfefe; cursor:pointer;">
+            <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+            <div style="flex:1;">
+              <div style="color:#3979b8; font-size:11px; font-weight:900;">11:40 호텔 복귀</div>
+              <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">호텔 복귀 · 휴식 / 가벼운 점심</strong>
+              <p style="margin:6px 0 0; color:#4e5d6e; font-size:12px;">• 오전 도보 일정 후 호텔에서 재정비 및 가벼운 요기</p>
+            </div>
+          </label>
+
+          <div style="padding:13px; border:1px solid #dce5ee; border-radius:14px; background:#fdfefe;">
+            <label style="display:flex; gap:10px; cursor:pointer;">
+              <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+              <div style="flex:1;">
+                <div style="color:#3979b8; font-size:11px; font-weight:900;">14:00 관람 → 17:00 전후 파크 출발</div>
+                <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">시로이코이비토 파크 → 삿포로역 복귀</strong>
+                <p style="margin:6px 0 8px; color:#4e5d6e; font-size:12px;">• 이동: 호텔 → 파크 지하철 환승 후 미야노사와역에서 도보 포함 편도 약 40~50분 예상<br>• 알아둘 점: 파크 유료 구역 · 체험 운영 사전 확인</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Shiroi+Koibito+Park" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:6px 10px; border:1px solid #cddcea; border-radius:8px; background:#f7fbfe; color:#15365c; font-size:11px; font-weight:800; text-decoration:none;">📍 시로이코이비토 파크 지도</a>
+              </div>
+            </label>
+          </div>
+
+          <div style="padding:13px; border:1px solid #f0dfc8; border-radius:14px; background:#fffaf3;">
+            <label style="display:flex; gap:10px; cursor:pointer;">
+              <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+              <div style="flex:1;">
+                <div style="color:#9a6019; font-size:11px; font-weight:900;">18:00 저녁 [필수 미식 ④ 스시]</div>
+                <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">네무로 하나마루 JR타워 스텔라플레이스점 · 스시</strong>
+                <p style="margin:6px 0 8px; color:#4e5d6e; font-size:12px;">• 스시는 긴 대기를 예상하고 당일 접수 방식 확인 / 대기 과다 시 대체 스시점 준비<br>• 토요일이라 식당 대기와 혼잡에 따라 휴식 · 쇼핑 시간을 조정</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Nemuro+Hanamaru+JR+Tower+Stellar+Place" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:6px 10px; border:1px solid #d8c3a5; border-radius:8px; background:#ffffff; color:#714919; font-size:11px; font-weight:800; text-decoration:none;">📍 네무로 하나마루 지도</a>
+              </div>
+            </label>
           </div>
         </div>
+      </section>
 
-        <div class="flight-grid">
-          <div class="flight-box">
-            <small>가는 편 · 2027. 01. 07.(목)</small>
-            <strong>10:05 출발</strong>
-            <span>인천 출발 → 12:30 전후 신치토세 도착 예상</span>
+      <!-- ==================== 4일차 ==================== -->
+      <section id="day4" style="scroll-margin-top:70px; border:1px solid #d8e6f1; border-radius:20px; background:#ffffff; overflow:hidden; box-shadow:0 8px 24px rgba(19,48,78,0.07);">
+        <div style="padding:18px; background:linear-gradient(135deg,#dceffc 0%,#f5f9fc 100%); border-bottom:1px solid #d8e6f1;">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+            <span style="padding:4px 10px; border-radius:999px; background:#15365c; color:#ffffff; font-size:11px; font-weight:800;">4일차 · 01.10 (일)</span>
+            <span style="padding:4px 10px; border-radius:999px; background:#ffffff; color:#3979b8; font-size:11px; font-weight:800;">같은 호텔 연박 · 4/4박</span>
           </div>
-
-          <div class="flight-box">
-            <small>오는 편 · 2027. 01. 11.(월)</small>
-            <strong>14:15 출발</strong>
-            <span>09:45 체크아웃 → 11:00 전후 공항 도착 목표</span>
-          </div>
+          <h3 style="margin:10px 0 4px; color:#0d2746; font-size:19px;">오타루 · 맥주박물관 · 징기스칸</h3>
+          <p style="margin:0; color:#4e5d6e; font-size:12px;">오타루 강풍·결빙 유의 (폭설 예보 시 조기 복귀) · 저녁 비어가든 17:30 전후 4인 예약</p>
         </div>
 
-        <div class="notice-box">
-          항공 편명·도착 시각·터미널은 항공권으로 최종 확인하세요. 귀국일에는 오전 관광을 넣지 않고 11:00 전후 공항 도착을 목표로 이동하며, 폭설 예보 시 호텔 출발을 앞당깁니다.
-        </div>
-      </div>
-    </section>
+        <div style="padding:16px; display:grid; gap:12px;">
+          <label style="display:flex; gap:10px; padding:13px; border:1px solid #dce5ee; border-radius:14px; background:#fdfefe; cursor:pointer;">
+            <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+            <div style="flex:1;">
+              <div style="color:#3979b8; font-size:11px; font-weight:900;">08:15 삿포로역 출발</div>
+              <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">아침 식사 후 삿포로역 → JR로 오타루 이동</strong>
+              <p style="margin:6px 0 0; color:#4e5d6e; font-size:12px;">• 아침: 호텔 조식 또는 간편식<br>• 삿포로 ↔ 오타루: JR 편도 약 35~50분 예상</p>
+            </div>
+          </label>
 
-    <section class="section">
-      <div class="checklist-card">
-        <div class="section-header">
-          <div>
-            <span class="section-kicker">BEFORE YOU GO</span>
-            <h2>출발 전, 이것만은 확인</h2>
+          <div style="padding:13px; border:1px solid #dce5ee; border-radius:14px; background:#fdfefe;">
+            <label style="display:flex; gap:10px; cursor:pointer;">
+              <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+              <div style="flex:1;">
+                <div style="color:#3979b8; font-size:11px; font-weight:900;">09:20 운하 → 10:20 사카이마치도리 → 11:30 오르골당</div>
+                <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">오타루 운하 설경 산책 · 사카이마치도리 쇼핑 · 오르골당 본관</strong>
+                <p style="margin:6px 0 8px; color:#4e5d6e; font-size:12px;">• 동선: 오타루역 → 운하 → 사카이마치 → 오르골당 순서로 도보 관람 (귀로는 가까운 JR역 선택 가능)<br>• 주의: 오타루는 강풍 · 결빙에 유의 / 폭설 예보 시 체류를 단축하고 일찍 삿포로로 복귀</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Otaru+Canal" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:6px 10px; border:1px solid #cddcea; border-radius:8px; background:#f7fbfe; color:#15365c; font-size:11px; font-weight:800; text-decoration:none;">📍 오타루 운하 지도</a>
+              </div>
+            </label>
+          </div>
+
+          <label style="display:flex; gap:10px; padding:13px; border:1px solid #dce5ee; border-radius:14px; background:#fdfefe; cursor:pointer;">
+            <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+            <div style="flex:1;">
+              <div style="color:#3979b8; font-size:11px; font-weight:900;">12:20 점심 → 13:30 전후 오타루 출발</div>
+              <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">소바 · 우동 등 가벼운 점심 후 삿포로 복귀</strong>
+              <p style="margin:6px 0 0; color:#4e5d6e; font-size:12px;">• 저녁 징기스칸을 위해 점심은 소바 · 우동 등으로 가볍게 식사</p>
+            </div>
+          </label>
+
+          <div style="padding:13px; border:1px solid #f0dfc8; border-radius:14px; background:#fffaf3;">
+            <label style="display:flex; gap:10px; cursor:pointer;">
+              <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+              <div style="flex:1;">
+                <div style="color:#9a6019; font-size:11px; font-weight:900;">16:00 박물관 → 17:30 저녁 [필수 미식 ⑤ 징기스칸 · ⑥ 삿포로 맥주]</div>
+                <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">삿포로 맥주박물관 관람 & 삿포로 비어가든 저녁</strong>
+                <p style="margin:6px 0 8px; color:#4e5d6e; font-size:12px;">• 이동: 삿포로역 → 박물관 택시 약 10분 / 박물관과 같은 권역에서 관람 → 식사로 이동 최소화 / 식사 후 호텔 택시 약 10~15분<br>• 메뉴: 징기스칸 + 삿포로 생맥주 (비어가든 17:30 전후 4인 예약)<br>• 알아둘 점: 맥주박물관 관람시간 · 시음 프로그램 운영과 예약 여부 확인 / 겉옷 냄새 배임에 대비해 보관 비닐 또는 탈취제 준비</p>
+                <a href="https://www.google.com/maps/search/?api=1&query=Sapporo+Beer+Museum" target="_blank" rel="noopener noreferrer" style="display:inline-block; padding:6px 10px; border:1px solid #d8c3a5; border-radius:8px; background:#ffffff; color:#714919; font-size:11px; font-weight:800; text-decoration:none;">📍 삿포로 맥주박물관·비어가든 지도</a>
+              </div>
+            </label>
           </div>
         </div>
+      </section>
 
-        <div id="checklist" class="checklist"></div>
-      </div>
-    </section>
+      <!-- ==================== 5일차 ==================== -->
+      <section id="day5" style="scroll-margin-top:70px; border:1px solid #d8e6f1; border-radius:20px; background:#ffffff; overflow:hidden; box-shadow:0 8px 24px rgba(19,48,78,0.07);">
+        <div style="padding:18px; background:linear-gradient(135deg,#dceffc 0%,#f5f9fc 100%); border-bottom:1px solid #d8e6f1;">
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:8px;">
+            <span style="padding:4px 10px; border-radius:999px; background:#15365c; color:#ffffff; font-size:11px; font-weight:800;">5일차 · 01.11 (월)</span>
+            <span style="padding:4px 10px; border-radius:999px; background:#fdecec; color:#ae3f3f; font-size:11px; font-weight:800;">체크아웃 · 귀국일</span>
+          </div>
+          <h3 style="margin:10px 0 4px; color:#0d2746; font-size:19px;">체크아웃 · 공항 · 귀국</h3>
+          <p style="margin:0; color:#4e5d6e; font-size:12px;">귀국일 오전 관광은 넣지 않기 · 11:00 전후 신치토세공항 도착 목표</p>
+        </div>
 
-    <footer class="footer">
-      <strong>SAPPORO FAMILY TRIP 2027</strong>
-      예약 전 계획안 · 항공 출발 시각은 사용자 제공 · 기타 시각과 이동시간은 예상 · 2027년 운영·운임은 재확인 필요
+        <div style="padding:16px; display:grid; gap:12px;">
+          <label style="display:flex; gap:10px; padding:13px; border:1px solid #dce5ee; border-radius:14px; background:#fdfefe; cursor:pointer;">
+            <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+            <div style="flex:1;">
+              <div style="color:#3979b8; font-size:11px; font-weight:900;">07:30 조식 · 짐 정리 → 09:45 호텔 체크아웃</div>
+              <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">호텔 조식 또는 간편식 후 체크아웃</strong>
+              <p style="margin:6px 0 0; color:#4e5d6e; font-size:12px;">• 귀국일 오전 관광은 넣지 않기 / 폭설 예보 시 호텔 출발을 앞당기기<br>• 액체류 · 냉장품 · 수하물 무게 사전 점검</p>
+            </div>
+          </label>
+
+          <label style="display:flex; gap:10px; padding:13px; border:1px solid #f5d0d0; border-radius:14px; background:#fff9f9; cursor:pointer;">
+            <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+            <div style="flex:1;">
+              <div style="color:#ae3f3f; font-size:11px; font-weight:900;">10:10 전후 JR 이동 → 11:00 전후 공항 도착 목표</div>
+              <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">삿포로역 → 신치토세공항 이동 (JR 약 40분)</strong>
+              <p style="margin:6px 0 0; color:#4e5d6e; font-size:12px;">• 호텔 → 삿포로역 도보 이동 후 JR 탑승<br>• 공항역에서 국제선 터미널까지 이동시간 별도 확보<br>• 철도 지연 시 버스 · 택시 검토 (도로도 지연될 수 있음)</p>
+            </div>
+          </label>
+
+          <label style="display:flex; gap:10px; padding:13px; border:1px solid #dce5ee; border-radius:14px; background:#fdfefe; cursor:pointer;">
+            <input type="checkbox" style="margin-top:4px; width:18px; height:18px; accent-color:#31876a;">
+            <div style="flex:1;">
+              <div style="color:#3979b8; font-size:11px; font-weight:900;">11:00~13:15 수속 · 점심 · 쇼핑 → 13:15 전후 탑승구 → 14:15 출발</div>
+              <strong style="display:block; margin-top:2px; color:#0d2746; font-size:15px;">체크인 수속 우선 진행 · 공항 내 점심 · 대한항공 14:15 출발</strong>
+              <p style="margin:6px 0 0; color:#4e5d6e; font-size:12px;">• 체크인 카운터 운영시간을 확인하고 수속 우선 진행<br>• 식사 · 쇼핑 구역에 따라 보안검색 전후 순서 조정<br>• 항공사 안내 탑승시각이 우선 / 항공편 · 탑승구 변경 확인</p>
+            </div>
+          </label>
+        </div>
+      </section>
+
+      <!-- 출발 전, 이것만은 확인 (3대 영역 12개 항목) -->
+      <section style="padding:18px; border:1px solid #dce5ee; border-radius:20px; background:#ffffff; box-shadow:0 6px 20px rgba(19,48,78,0.06);">
+        <span style="display:block; color:#3979b8; font-size:11px; font-weight:900; letter-spacing:0.1em;">BEFORE YOU GO</span>
+        <h2 style="margin:3px 0 14px; color:#0d2746; font-size:19px;">출발 전, 이것만은 확인</h2>
+
+        <!-- 01 예약 · 투숙 -->
+        <h3 style="margin:0 0 8px; color:#15365c; font-size:14px;">01 예약 · 투숙</h3>
+        <div style="display:grid; gap:7px; margin-bottom:16px;">
+          <label style="display:flex; align-items:center; gap:9px; padding:10px 12px; border-radius:11px; background:#f5f9fc; font-size:13px; cursor:pointer;">
+            <input type="checkbox" style="width:17px; height:17px; accent-color:#31876a;">
+            <span>항공 편명 · 도착 시각 · 터미널 확인.</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:9px; padding:10px 12px; border-radius:11px; background:#f5f9fc; font-size:13px; cursor:pointer;">
+            <input type="checkbox" style="width:17px; height:17px; accent-color:#31876a;">
+            <span>호텔 4인 1실 가능 여부 / 2실 비교.</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:9px; padding:10px 12px; border-radius:11px; background:#f5f9fc; font-size:13px; cursor:pointer;">
+            <input type="checkbox" style="width:17px; height:17px; accent-color:#31876a;">
+            <span>호텔 조식 시작 시각과 투어 집결 비교.</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:9px; padding:10px 12px; border-radius:11px; background:#f5f9fc; font-size:13px; cursor:pointer;">
+            <input type="checkbox" style="width:17px; height:17px; accent-color:#31876a;">
+            <span>비어가든 4인 좌석 · 식당 영업일 확인.</span>
+          </label>
+        </div>
+
+        <!-- 02 투어 · 입장 -->
+        <h3 style="margin:0 0 8px; color:#15365c; font-size:14px;">02 투어 · 입장</h3>
+        <div style="display:grid; gap:7px; margin-bottom:16px;">
+          <label style="display:flex; align-items:center; gap:9px; padding:10px 12px; border-radius:11px; background:#f5f9fc; font-size:13px; cursor:pointer;">
+            <input type="checkbox" style="width:17px; height:17px; accent-color:#31876a;">
+            <span>비에이 확정 코스 · 집결지 · 식사 확인.</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:9px; padding:10px 12px; border-radius:11px; background:#f5f9fc; font-size:13px; cursor:pointer;">
+            <input type="checkbox" style="width:17px; height:17px; accent-color:#31876a;">
+            <span>폭설 대체 일정 · 취소 규정 확인.</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:9px; padding:10px 12px; border-radius:11px; background:#f5f9fc; font-size:13px; cursor:pointer;">
+            <input type="checkbox" style="width:17px; height:17px; accent-color:#31876a;">
+            <span>파크 체험 · 맥주박물관 운영 확인.</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:9px; padding:10px 12px; border-radius:11px; background:#f5f9fc; font-size:13px; cursor:pointer;">
+            <input type="checkbox" style="width:17px; height:17px; accent-color:#31876a;">
+            <span>스시 대기 접수와 대체 매장 준비.</span>
+          </label>
+        </div>
+
+        <!-- 03 겨울 이동 · 준비물 -->
+        <h3 style="margin:0 0 8px; color:#15365c; font-size:14px;">03 겨울 이동 · 준비물</h3>
+        <div style="display:grid; gap:7px;">
+          <label style="display:flex; align-items:center; gap:9px; padding:10px 12px; border-radius:11px; background:#f5f9fc; font-size:13px; cursor:pointer;">
+            <input type="checkbox" style="width:17px; height:17px; accent-color:#31876a;">
+            <span>매일 아침 기상 · JR 운행정보 확인.</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:9px; padding:10px 12px; border-radius:11px; background:#f5f9fc; font-size:13px; cursor:pointer;">
+            <input type="checkbox" style="width:17px; height:17px; accent-color:#31876a;">
+            <span>방수 미끄럼방지 부츠 · 장갑 · 핫팩.</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:9px; padding:10px 12px; border-radius:11px; background:#f5f9fc; font-size:13px; cursor:pointer;">
+            <input type="checkbox" style="width:17px; height:17px; accent-color:#31876a;">
+            <span>여권 · 해외결제 수단 · 통신 준비.</span>
+          </label>
+          <label style="display:flex; align-items:center; gap:9px; padding:10px 12px; border-radius:11px; background:#f5f9fc; font-size:13px; cursor:pointer;">
+            <input type="checkbox" style="width:17px; height:17px; accent-color:#31876a;">
+            <span>귀국일 11시 전후 공항 도착 목표.</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- 가족 메모장 -->
+      <section style="padding:18px; border:1px solid #dce5ee; border-radius:20px; background:#ffffff; box-shadow:0 6px 20px rgba(19,48,78,0.06);">
+        <span style="display:block; color:#3979b8; font-size:11px; font-weight:900; letter-spacing:0.1em;">FAMILY MEMO</span>
+        <h2 style="margin:3px 0 10px; color:#0d2746; font-size:18px;">가족 여행 메모장</h2>
+        <textarea placeholder="예약번호, 바우처 미팅 장소, 대기 번호, 쇼핑 리스트 등을 자유롭게 적어 두세요." style="width:100%; min-height:100px; padding:12px; border:1px solid #dce5ee; border-radius:12px; background:#f9fbfd; font-size:13px; box-sizing:border-box;"></textarea>
+      </section>
+
+    </div>
+
+    <!-- 푸터 -->
+    <footer style="padding:24px 18px 32px; background:#0d2746; color:#97a8ba; font-size:11px; text-align:center;">
+      <strong style="display:block; margin-bottom:4px; color:#dceafb; font-size:13px;">SAPPORO FAMILY TRIP 2027</strong>
+      예약 전 계획안 | 항공 출발 시각은 사용자 제공 · 기타 시각과 이동시간은 예상 · 2027년 운영·운임은 재확인 필요
     </footer>
+
   </div>
 
-  
 </body>
 </html>
