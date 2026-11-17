@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  
+  
+  
+  
+  
+  
+  <rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%2315365c%22/><text x=%2250%22 y=%2268%22 font-size=%2256%22 text-anchor=%22middle%22>❄️</text>" />
+  <rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%2315365c%22/><text x=%2250%22 y=%2268%22 font-size=%2256%22 text-anchor=%22middle%22>❄️</text>" />
+
+  <title>SAPPORO FAMILY TRIP 2027</title>
+
+  
+    :root {
+      --navy: #15365c;
+      --deep-navy: #0d2746;
+      --blue: #3979b8;
+      --sky: #dceffc;
+      --ice: #f5f9fc;
+      --white: #ffffff;
+      --text: #172435;
+      --subtext: #647184;
+      --border: #dce5ee;
+      --red: #c84d4d;
+      --gold: #c69242;
+      --green: #31876a;
+      --shadow: 0 10px 30px rgba(19, 48, 78, 0.09);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top right, rgba(151, 205, 241, 0.3), transparent 28%),
+        linear-gradient(180deg, #eef7fd 0, #f8fbfd 360px, #f4f7fa 100%);
+      color: var(--text);
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Pretendard",
+        "Noto Sans KR",
+        "Segoe UI",
+        sans-serif;
+      line-height: 1.55;
+    }
+
+    button,
+    input,
+    textarea {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .app-shell {
+      width: min(100%, 760px);
+      min-height: 100vh;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.72);
+      box-shadow: 0 0 50px rgba(22, 53, 87, 0.08);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding:
+        calc(28px + env(safe-area-inset-top))
+        22px
+        28px;
+      color: var(--white);
+      background:
+        linear-gradient(135deg, rgba(13, 39, 70, 0.97), rgba(34, 95, 151, 0.9)),
+        linear-gradient(180deg, #15365c, #3979b8);
+    }
+
+    .hero::before,
+    .hero::after {
+      position: absolute;
+      content: "";
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .hero::before {
+      top: -70px;
+      right: -30px;
+      width: 210px;
+      height: 210px;
+    }
+
+    .hero::after {
+      right: 70px;
+      bottom: -95px;
+      width: 180px;
+      height: 180px;
+    }
+
+    .eyebrow {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 8px;
+      color: #bddcf4;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+    }
+
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      margin: 0;
+      font-size: clamp(28px, 7vw, 42px);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .hero-subtitle {
+      position: relative;
+      z-index: 1;
+      margin: 12px 0 0;
+      color: #d9eafb;
+      font-size: 14px;
+    }
+
+    .hero-meta {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .hero-chip {
+      padding: 8px 11px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.1);
+      color: #f2f8fd;
+      font-size: 12px;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+    }
+
+    .countdown-card {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin: 20px 16px 0;
+      padding: 17px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: var(--shadow);
+    }
+
+    .countdown-label {
+      margin-bottom: 3px;
+      color: var(--subtext);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .countdown-value {
+      color: var(--deep-navy);
+      font-size: 23px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .countdown-detail {
+      max-width: 220px;
+      color: var(--subtext);
+      font-size: 12px;
+      text-align: right;
+    }
+
+    .section {
+      padding: 22px 16px 0;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 12px;
+    }
+
+    .section-kicker {
+      display: block;
+      margin-bottom: 3px;
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+    }
+
+    .section h2 {
+      margin: 0;
+      color: var(--deep-navy);
+      font-size: 20px;
+      letter-spacing: -0.035em;
+    }
+
+    .day-tabs {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(64px, 1fr));
+      gap: 8px;
+      overflow-x: auto;
+      padding: 4px 16px 12px;
+      scrollbar-width: none;
+    }
+
+    .day-tabs::-webkit-scrollbar {
+      display: none;
+    }
+
+    .day-tab {
+      min-width: 66px;
+      padding: 11px 6px;
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      background: var(--white);
+      color: var(--subtext);
+      cursor: pointer;
+      transition: 0.2s ease;
+      text-align: center;
+    }
+
+    .day-tab strong {
+      display: block;
+      color: inherit;
+      font-size: 13px;
+    }
+
+    .day-tab span {
+      display: block;
+      margin-top: 2px;
+      font-size: 11px;
+    }
+
+    .day-tab.active {
+      border-color: var(--navy);
+      background: var(--navy);
+      color: var(--white);
+      box-shadow: 0 8px 20px rgba(21, 54, 92, 0.2);
+      transform: translateY(-1px);
+    }
+
+    .day-summary {
+      margin: 0 16px;
+      padding: 19px;
+      border: 1px solid #d8e6f1;
+      border-radius: var(--radius);
+      background:
+        linear-gradient(135deg, rgba(220, 239, 252, 0.9), rgba(255, 255, 255, 0.98));
+      box-shadow: 0 8px 24px rgba(33, 72, 108, 0.07);
+    }
+
+    .day-summary-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .day-summary h3 {
+      margin: 0;
+      color: var(--deep-navy);
+      font-size: 19px;
+      letter-spacing: -0.035em;
+    }
+
+    .day-summary p {
+      margin: 7px 0 0;
+      color: var(--subtext);
+      font-size: 13px;
+    }
+
+    .weather-note {
+      flex: 0 0 auto;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .progress-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 17px;
+    }
+
+    .progress-track {
+      flex: 1;
+      height: 8px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: rgba(21, 54, 92, 0.1);
+    }
+
+    .progress-bar {
+      width: 0;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--blue), var(--green));
+      transition: width 0.3s ease;
+    }
+
+    .progress-text {
+      min-width: 72px;
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 900;
+      text-align: right;
+    }
+
+    .filters {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: none;
+    }
+
+    .filters::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-button {
+      flex: 0 0 auto;
+      padding: 8px 13px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: var(--white);
+      color: var(--subtext);
+      font-size: 12px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .filter-button.active {
+      border-color: var(--navy);
+      background: var(--navy);
+      color: var(--white);
+    }
+
+    .timeline {
+      position: relative;
+      margin-top: 16px;
+    }
+
+    .timeline::before {
+      position: absolute;
+      top: 10px;
+      bottom: 12px;
+      left: 18px;
+      width: 2px;
+      content: "";
+      background: linear-gradient(var(--sky), var(--border));
+    }
+
+    .schedule-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: 37px 1fr;
+      gap: 12px;
+      margin-bottom: 13px;
+    }
+
+    .timeline-dot {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      width: 37px;
+      height: 37px;
+      place-items: center;
+      border: 5px solid #f7fafc;
+      border-radius: 50%;
+      background: var(--navy);
+      color: var(--white);
+      font-size: 9px;
+      font-weight: 900;
+      box-shadow: 0 2px 10px rgba(21, 54, 92, 0.16);
+    }
+
+    .schedule-content {
+      padding: 16px;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      background: var(--white);
+      box-shadow: 0 7px 22px rgba(19, 48, 78, 0.06);
+      transition: 0.2s ease;
+    }
+
+    .schedule-card.completed .schedule-content {
+      opacity: 0.68;
+      background: #f4f8f6;
+    }
+
+    .schedule-card.completed .schedule-title {
+      text-decoration: line-through;
+      text-decoration-color: #8b9a94;
+    }
+
+    .schedule-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .schedule-time {
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 0.02em;
+    }
+
+    .schedule-title {
+      margin: 4px 0 0;
+      color: var(--deep-navy);
+      font-size: 16px;
+      letter-spacing: -0.025em;
+    }
+
+    .check-label {
+      display: grid;
+      flex: 0 0 auto;
+      width: 28px;
+      height: 28px;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: var(--ice);
+      cursor: pointer;
+    }
+
+    .check-label input {
+      width: 17px;
+      height: 17px;
+      accent-color: var(--green);
+      cursor: pointer;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 11px;
+    }
+
+    .tag {
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #edf4fa;
+      color: var(--navy);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .tag.meal {
+      background: #fff2e2;
+      color: #9a6019;
+    }
+
+    .tag.important {
+      background: #fdecec;
+      color: #ae3f3f;
+    }
+
+    .schedule-description {
+      margin: 11px 0 0;
+      color: #4e5d6e;
+      font-size: 13px;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 8px;
+      margin-top: 13px;
+    }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: 74px 1fr;
+      gap: 8px;
+      font-size: 12px;
+    }
+
+    .info-label {
+      color: var(--subtext);
+      font-weight: 800;
+    }
+
+    .info-value {
+      color: #37465a;
+    }
+
+    .card-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 14px;
+    }
+
+    .action-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 11px;
+      border: 1px solid #cddcea;
+      border-radius: 10px;
+      color: var(--navy);
+      background: #f7fbfe;
+      font-size: 11px;
+      font-weight: 900;
+      text-decoration: none;
+    }
+
+    .must-eat-card,
+    .memo-card,
+    .checklist-card,
+    .flight-card,
+    .hotel-card {
+      padding: 18px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 7px 22px rgba(19, 48, 78, 0.06);
+    }
+
+    .hotel-badge {
+      display: inline-block;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: #eaf4fc;
+      color: var(--navy);
+      font-size: 11px;
+      font-weight: 800;
+    }
+
+    .hotel-name {
+      margin: 8px 0 4px;
+      color: var(--deep-navy);
+      font-size: 18px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+    }
+
+    .hotel-sub {
+      margin: 0 0 12px;
+      color: var(--subtext);
+      font-size: 12px;
+    }
+
+    .food-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
+      margin-top: 13px;
+    }
+
+    .food-item {
+      padding: 12px;
+      border: 1px solid #ebe3d5;
+      border-radius: 14px;
+      background: #fffaf2;
+    }
+
+    .food-item strong {
+      display: block;
+      color: #714919;
+      font-size: 13px;
+    }
+
+    .food-item span {
+      display: block;
+      margin-top: 3px;
+      color: #957149;
+      font-size: 10px;
+    }
+
+    .memo-card textarea {
+      width: 100%;
+      min-height: 110px;
+      margin-top: 12px;
+      padding: 13px;
+      resize: vertical;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      outline: none;
+      background: #f9fbfd;
+      color: var(--text);
+    }
+
+    .memo-card textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(57, 121, 184, 0.1);
+    }
+
+    .save-note {
+      margin: 8px 0 0;
+      color: var(--green);
+      font-size: 11px;
+      font-weight: 800;
+      text-align: right;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+    }
+
+    .save-note.visible {
+      opacity: 1;
+    }
+
+    .checklist-group-title {
+      margin: 14px 0 6px;
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .checklist {
+      display: grid;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 11px;
+      border-radius: 13px;
+      background: var(--ice);
+      color: #405064;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .checklist-item input {
+      flex: 0 0 auto;
+      width: 18px;
+      height: 18px;
+      margin-top: 1px;
+      accent-color: var(--green);
+    }
+
+    .checklist-item.checked span {
+      color: #8c9893;
+      text-decoration: line-through;
+    }
+
+    .flight-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 13px;
+    }
+
+    .flight-box {
+      padding: 14px;
+      border-radius: 15px;
+      background: #f1f7fb;
+    }
+
+    .flight-box small {
+      display: block;
+      color: var(--subtext);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .flight-box strong {
+      display: block;
+      margin-top: 5px;
+      color: var(--deep-navy);
+      font-size: 19px;
+    }
+
+    .flight-box span {
+      display: block;
+      margin-top: 3px;
+      color: var(--subtext);
+      font-size: 11px;
+    }
+
+    .notice-box {
+      margin-top: 12px;
+      padding: 12px;
+      border-radius: 13px;
+      background: #fff4e8;
+      color: #865a25;
+      font-size: 11px;
+    }
+
+    .empty-state {
+      padding: 40px 18px;
+      border: 1px dashed var(--border);
+      border-radius: 17px;
+      color: var(--subtext);
+      background: var(--white);
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .footer {
+      margin-top: 30px;
+      padding:
+        26px
+        20px
+        calc(30px + env(safe-area-inset-bottom));
+      color: #97a8ba;
+      background: var(--deep-navy);
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .footer strong {
+      display: block;
+      margin-bottom: 5px;
+      color: #dceafb;
+      font-size: 13px;
+    }
+
+    @media (min-width: 680px) {
+      .section {
+        padding-right: 24px;
+        padding-left: 24px;
+      }
+
+      .day-tabs {
+        padding-right: 24px;
+        padding-left: 24px;
+      }
+
+      .day-summary {
+        margin-right: 24px;
+        margin-left: 24px;
+      }
+
+      .food-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  
+</head>
+
+<body>
+  <div class="app-shell">
+    <header class="hero">
+      <p class="eyebrow">SAPPORO / BIEI / OTARU</p>
+
+      <h1>SAPPORO<br />FAMILY TRIP 2027</h1>
+
+      <p class="hero-subtitle">
+        아빠 · 엄마 · 성인 아들 1 · 성인 아들 2의 4박 5일
+      </p>
+
+      <div class="hero-meta">
+        <span class="hero-chip">2027. 01. 07. — 01. 11.</span>
+        <span class="hero-chip">솔라리아 니시테츠 호텔 삿포로 (4박)</span>
+        <span class="hero-chip">대한항공 10:05 / 14:15</span>
+        <span class="hero-chip">성인 4인</span>
+      </div>
+    </header>
+
+    <section class="countdown-card">
+      <div>
+        <div class="countdown-label">여행 카운트다운</div>
+        <div id="countdownValue" class="countdown-value">계산 중</div>
+      </div>
+
+      <div id="countdownDetail" class="countdown-detail">
+        삿포로 여행일까지 남은 날짜를 계산하고 있습니다.
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <span class="section-kicker">SELECT DAY</span>
+          <h2>일차별 일정</h2>
+        </div>
+      </div>
+    </section>
+
+    <nav id="dayTabs" class="day-tabs" aria-label="일차 선택"></nav>
+
+    <section id="daySummary" class="day-summary"></section>
+
+    <section class="section">
+      <div class="section-header">
+        <div>
+          <span class="section-kicker">DAILY ROUTE</span>
+          <h2>상세 일정</h2>
+        </div>
+      </div>
+
+      <div id="filters" class="filters"></div>
+
+      <div id="timeline" class="timeline"></div>
+    </section>
+
+    <section class="section">
+      <div class="must-eat-card">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">MUST EAT 6</span>
+            <h2>필수 미식 6종</h2>
+          </div>
+        </div>
+
+        <div class="food-grid">
+          <div class="food-item">
+            <strong>스프카레</strong>
+            <span>1일차 저녁 · 스프카레 GARAKU</span>
+          </div>
+
+          <div class="food-item">
+            <strong>해산물덮밥</strong>
+            <span>3일차 아침 · 돈부리차야 니조시장점</span>
+          </div>
+
+          <div class="food-item">
+            <strong>우유 아이스크림</strong>
+            <span>3일차 간식 · 키노토야 BAKE 폴타운점</span>
+          </div>
+
+          <div class="food-item">
+            <strong>스시</strong>
+            <span>3일차 저녁 · 네무로 하나마루 스텔라플레이스점</span>
+          </div>
+
+          <div class="food-item">
+            <strong>징기스칸</strong>
+            <span>4일차 저녁 · 삿포로 비어가든</span>
+          </div>
+
+          <div class="food-item">
+            <strong>삿포로 맥주</strong>
+            <span>4일차 · 맥주박물관 & 삿포로 비어가든</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="memo-card">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">FAMILY MEMO</span>
+            <h2 id="memoTitle">1일차 가족 메모</h2>
+          </div>
+        </div>
+
+        <textarea
+          id="dayMemo"
+          placeholder="예약번호, 대기 접수 번호, 대체 식당, 쇼핑 메모 등을 적어 두세요."
+        ></textarea>
+
+        <p id="saveNote" class="save-note">이 기기에 자동 저장되었습니다.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="hotel-card">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">HOTEL (4 NIGHTS)</span>
+            <h2>숙소 및 이동 기준점</h2>
+          </div>
+        </div>
+
+        <span class="hotel-badge">4박 연박 예정 · JR 삿포로역 남쪽 출구 도보 이동</span>
+        <div class="hotel-name">솔라리아 니시테츠 호텔 삿포로</div>
+        <p class="hotel-sub">ソラリア西鉄ホテル札幌 · Solaria Nishitetsu Hotel Sapporo</p>
+
+        <div class="info-list">
+          <div class="info-row">
+            <div class="info-label">공항 ↔ 호텔</div>
+            <div class="info-value">신치토세공항 ↔ 삿포로역 JR 약 40분 + 역 남쪽 출구에서 호텔 도보</div>
+          </div>
+          <div class="info-row">
+            <div class="info-label">시내 이동</div>
+            <div class="info-value">오도리·스스키노 귀로 및 도심 이동 시 지하 보행공간(지하상가) 적극 활용</div>
+          </div>
+          <div class="info-row">
+            <div class="info-label">체크사항</div>
+            <div class="info-value">호텔 4인 1실 가능 여부 / 2실 비교 · 호텔 조식 시작 시각과 2일차 투어 집결 시각 비교</div>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <a class="action-link" href="https://www.google.com/maps/search/?api=1&query=Solaria+Nishitetsu+Hotel+Sapporo" target="_blank" rel="noopener noreferrer">
+            📍 호텔 구글 지도 열기
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="flight-card">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">FLIGHT</span>
+            <h2>대한항공 일정 (한국과 시차 없음)</h2>
+          </div>
+        </div>
+
+        <div class="flight-grid">
+          <div class="flight-box">
+            <small>가는 편 · 2027. 01. 07.(목)</small>
+            <strong>10:05 출발</strong>
+            <span>인천 출발 → 12:30 전후 신치토세 도착 예상</span>
+          </div>
+
+          <div class="flight-box">
+            <small>오는 편 · 2027. 01. 11.(월)</small>
+            <strong>14:15 출발</strong>
+            <span>09:45 체크아웃 → 11:00 전후 공항 도착 목표</span>
+          </div>
+        </div>
+
+        <div class="notice-box">
+          항공 편명·도착 시각·터미널은 항공권으로 최종 확인하세요. 귀국일에는 오전 관광을 넣지 않고 11:00 전후 공항 도착을 목표로 이동하며, 폭설 예보 시 호텔 출발을 앞당깁니다.
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="checklist-card">
+        <div class="section-header">
+          <div>
+            <span class="section-kicker">BEFORE YOU GO</span>
+            <h2>출발 전, 이것만은 확인</h2>
+          </div>
+        </div>
+
+        <div id="checklist" class="checklist"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <strong>SAPPORO FAMILY TRIP 2027</strong>
+      예약 전 계획안 · 항공 출발 시각은 사용자 제공 · 기타 시각과 이동시간은 예상 · 2027년 운영·운임은 재확인 필요
+    </footer>
+  </div>
+
+  
+</body>
+</html>
